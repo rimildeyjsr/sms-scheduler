@@ -1,6 +1,6 @@
 $('.mdl-card__supporting-text').hide();
 
-$(document).ready(function(){
+ready = function(){
 
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
     $('#fab').click(function(){
@@ -15,7 +15,7 @@ $(document).ready(function(){
             $('.mdl-card__title').hide();
         }
 
-        else {
+        if (innerHtml === 'checked circle') {
             console.log(3);
             $('.mdl-card__supporting-text').hide();
             $('#fab').css('background-color','#ed2553');
@@ -118,6 +118,7 @@ $(document).ready(function(){
         $('.container-div').show();
     });
 
+}
 
-
-});
+$(document).ready(ready);
+$(document).on("page:load", ready);
