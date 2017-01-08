@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS scheduling site</title>
+
+  <!--css stylesheets-->
+  <link href="jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+  <link href="css/material.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+  <link href="date-time-picker/css/mdDateTimePicker.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="container-div">
+  <!-- Colored FAB button with ripple -->
+  <button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">add</i>
+  </button>
+
+  <style>
+
+  </style>
+
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title" id="text-div">
+      <h2 id="title-text" class="mdl-card__title-text">CAMPAIGN</h2>
+      <br>
+      <br>
+      <span id="success">Success!</span>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <form action="#">
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="campaign-name">
+          <label class="mdl-textfield__label" for="phone-number-receiver">Campaign Name</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="phone-number-receiver">
+          <label class="mdl-textfield__label" for="phone-number-receiver">Phone Number for recipient</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="start-date">
+          <label class="mdl-textfield__label" for="start-date" id="start-date-label">Enter start date</label>
+        </div>
+
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text"  id="end-date">
+          <label class="mdl-textfield__label" for="end-date" id="end-date-label">Enter end date</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text"  id="start-time">
+          <label class="mdl-textfield__label" for="end-date" id="start-time-label">Enter time</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield less-margin">
+          <textarea class="mdl-textfield__input" type="text" id="sms-msg" rows="8" columns="40"></textarea>
+          <label class="mdl-textfield__label" for="sms-msg">Text lines...</label>
+
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text"  id="break-msg" value="1">
+          <label class="mdl-textfield__label" for="break-msg">Number of Pages</label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="js/material.min.js"></script>
+<script src="date-time-picker/js/moment.min.js"></script>
+<script src="date-time-picker/js/draggabilly.pkgd.min.js"></script>
+<script src="date-time-picker/js/mdDateTimePicker.js"></script>
+<script>
+
+  $('.mdl-card__supporting-text').hide();
+
+  $(document).ready(function(){
+
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    $('#fab').click(function(){
+
+      var innerHtml = $('#fab .material-icons').html();
+
+      if (innerHtml === 'add'){
+        $('#fab').css('background-color','green');
+        $('#fab .material-icons').html('check circle');
+        $('.mdl-card__supporting-text').show();
+        $('.mdl-card__title').hide();
+      }
+
+      else {
+        $('.mdl-card__supporting-text').hide();
+        $('#fab').css('background-color','#ed2553');
+        $('#fab .material-icons').html('add');
+        $('.mdl-card__title').show();
+        $('#title-text').text('Campaign added!');
+      }
+
+    });
+
+    $('#sms-msg').keyup(function(){
+      var Length = $('#sms-msg').val().length;
+      var pageBreak = Math.floor((Length/160));
+      $('#break-msg').val(pageBreak+1);
+    });
+
+    var inputStartDate = document.querySelector('#start-date');
+    var outputStartDate = document.querySelector('#start-date-label');
+
+    var inputEndDate = document.querySelector('#end-date');
+    var outputEndDate = document.querySelector('#end-date-label');
+
+    var inputStartTime = document.querySelector('#start-time');
+    var outputStartTime = document.querySelector('#start-time-label');
+
+
+    var dialogStartDate = new mdDateTimePicker.default({
+      type: 'date',
+      orientation: 'PORTRAIT',
+      past: moment().subtract(150,'years'),
+      future: moment().add(50,'years')
+    });
+
+    dialogStartDate.trigger = inputStartDate;
+
+    inputStartDate.addEventListener('click', function() {
+      dialogStartDate.toggle();
+      $('.container-div').toggle();
+    });
+
+    inputStartDate.addEventListener('onOk', function() {
+      var startDate = dialogStartDate.time.toString();
+      var startDateFormat = moment(startDate).format('LL');
+      outputStartDate.innerHTML = startDateFormat;
+      $('#start-date-label').css('color','blue');
+      $('.container-div').show();
+    });
+
+    inputStartDate.addEventListener('onCancel',function(){
+      $('.container-div').show();
+    });
+
+    var dialogEndDate = new mdDateTimePicker.default({
+      type: 'date',
+      orientation: 'PORTRAIT',
+      past: moment().subtract(150,'years'),
+      future: moment().add(150,'years')
+    });
+
+    dialogEndDate.trigger = inputEndDate;
+
+    inputEndDate.addEventListener('click', function() {
+      dialogEndDate.toggle();
+      $('.container-div').toggle();
+    });
+
+    inputEndDate.addEventListener('onOk', function() {
+      var endDate = dialogEndDate.time.toString();
+      var endDateFormat = moment(endDate).format('LL');
+      outputEndDate.innerHTML = endDateFormat;
+      $('#end-date-label').css('color','blue');
+      $('.container-div').show();
+    });
+
+    inputEndDate.addEventListener('onCancel',function(){
+      $('.container-div').show();
+    });
+
+    var dialogStartTime = new mdDateTimePicker.default({
+      type: 'time',
+      orientation: 'PORTRAIT',
+    });
+
+    dialogStartTime.trigger = inputStartTime;
+
+    inputStartTime.addEventListener('click', function() {
+      dialogStartTime.toggle();
+      $('.container-div').toggle();
+    });
+
+    inputStartTime.addEventListener('onOk', function() {
+      $('.container-div').show();
+      var startTime = dialogStartTime.time.toString();
+      var startTimeFormat = moment(startTime).format('LTS');
+      outputStartTime.innerHTML = startTimeFormat;
+      $('#start-time-label').css('color','blue');
+    });
+
+    inputStartTime.addEventListener('onCancel',function(){
+      $('.container-div').show();
+    });
+
+
+
+  });
+
+
+
+</script>
+</body>
+
+</html>
