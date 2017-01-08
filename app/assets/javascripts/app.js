@@ -6,8 +6,9 @@ $(document).ready(function(){
     $('#fab').click(function(){
 
         var innerHtml = $('#fab .material-icons').html();
-
+        console.log(1);
         if (innerHtml === 'add'){
+            console.log(2);
             $('#fab').css('background-color','green');
             $('#fab .material-icons').html('check circle');
             $('.mdl-card__supporting-text').show();
@@ -15,6 +16,7 @@ $(document).ready(function(){
         }
 
         else {
+            console.log(3);
             $('.mdl-card__supporting-text').hide();
             $('#fab').css('background-color','#ed2553');
             $('#fab .material-icons').html('add');
