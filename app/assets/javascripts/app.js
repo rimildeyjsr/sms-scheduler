@@ -6,7 +6,6 @@ ready = function(){
     $('#fab').click(function(){
 
         var innerHtml = $('#fab .material-icons').html();
-        console.log(1);
         if (innerHtml === 'add'){
             console.log(2);
             $('#fab').css('background-color','green');
@@ -16,7 +15,6 @@ ready = function(){
         }
 
         else {
-            console.log(3);
             $('.mdl-card__supporting-text').hide();
             $('#fab').css('background-color','#ed2553');
             $('#fab .material-icons').html('add');
@@ -52,13 +50,11 @@ ready = function(){
     dialogStartDate.trigger = inputStartDate;
 
     inputStartDate.addEventListener('click', function() {
-        console.log(18);
         dialogStartDate.toggle();
         $('.container-div').toggle();
     });
 
     inputStartDate.addEventListener('onOk', function() {
-        console.log(19);
         var startDate = dialogStartDate.time.toString();
         var startDateFormat = moment(startDate).format('LL');
         outputStartDate.innerHTML = startDateFormat;
@@ -67,7 +63,6 @@ ready = function(){
     });
 
     inputStartDate.addEventListener('onCancel',function(){
-        console.log(20);
         $('.container-div').show();
     });
 
