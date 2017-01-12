@@ -52,11 +52,13 @@ ready = function(){
     dialogStartDate.trigger = inputStartDate;
 
     inputStartDate.addEventListener('click', function() {
+        console.log(18);
         dialogStartDate.toggle();
         $('.container-div').toggle();
     });
 
     inputStartDate.addEventListener('onOk', function() {
+        console.log(19);
         var startDate = dialogStartDate.time.toString();
         var startDateFormat = moment(startDate).format('LL');
         outputStartDate.innerHTML = startDateFormat;
@@ -65,6 +67,7 @@ ready = function(){
     });
 
     inputStartDate.addEventListener('onCancel',function(){
+        console.log(20);
         $('.container-div').show();
     });
 
@@ -121,4 +124,4 @@ ready = function(){
 }
 
 $(document).ready(ready);
-$(document).on("page:load", ready);
+$(document).on("page:change", ready);
