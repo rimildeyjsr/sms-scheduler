@@ -15,7 +15,7 @@ ready = function(){
             $('.mdl-card__title').hide();
         }
 
-        if (innerHtml === 'checked circle') {
+        else {
             console.log(3);
             $('.mdl-card__supporting-text').hide();
             $('#fab').css('background-color','#ed2553');
