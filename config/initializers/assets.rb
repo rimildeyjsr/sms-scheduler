@@ -13,6 +13,7 @@ Rails.application.config.assets.precompile += %w( moment.min.js )
 Rails.application.config.assets.precompile += %w( draggabilly.pkgd.min.js )
 Rails.application.config.assets.precompile += %w( mdDateTimePicker.js )
 Rails.application.config.assets.precompile += %w( app.js )
+Rails.application.config.assets.precompile += %w( home.style.css )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 
