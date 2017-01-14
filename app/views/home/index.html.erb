@@ -1,94 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eng">
+  <head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMS scheduling site</title>
+  </head>
 
-  <!--css stylesheets-->
-  <%= stylesheet_link_tag "jquery-ui.min" %>
-  <%= stylesheet_link_tag "material.min" %>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en'
-        rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag "mdDateTimePicker" %>
-  <%= stylesheet_link_tag "style" %>
-
-</head>
-
-<body>
-<div class="container-div">
-  <!-- Colored FAB button with ripple -->
-  <button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-    <i class="material-icons">add</i>
-  </button>
-
-  <style>
-
-  </style>
-
-  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title" id="text-div">
-      <h2 id="title-text" class="mdl-card__title-text">CAMPAIGN</h2>
-      <br>
-      <br>
-      <span id="success">Success!</span>
-    </div>
-    <div class="mdl-card__supporting-text">
-      <form action="#">
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="campaign-name">
-          <label class="mdl-textfield__label" for="phone-number-receiver">Campaign Name</label>
-        </div>
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="phone-number-receiver">
-          <label class="mdl-textfield__label" for="phone-number-receiver">Phone Number for recipient</label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
-        </div>
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="start-date">
-          <label class="mdl-textfield__label" for="start-date" id="start-date-label">Enter start date</label>
-        </div>
-
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text"  id="end-date">
-          <label class="mdl-textfield__label" for="end-date" id="end-date-label">Enter end date</label>
-        </div>
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text"  id="start-time">
-          <label class="mdl-textfield__label" for="end-date" id="start-time-label">Enter time</label>
-        </div>
-
-        <div class="mdl-textfield mdl-js-textfield less-margin">
-          <textarea class="mdl-textfield__input" type="text" id="sms-msg" rows="8" columns="40"></textarea>
-          <label class="mdl-textfield__label" for="sms-msg">Text lines...</label>
-
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text"  id="break-msg" value="1">
-          <label class="mdl-textfield__label" for="break-msg">Number of Pages</label>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-
-<%= javascript_include_tag "jquery-3.0.0.min" %>
-<%= javascript_include_tag "jquery-ui.min" %>
-<%= javascript_include_tag "material.min" %>
-<%= javascript_include_tag "moment.min" %>
-<%= javascript_include_tag "draggabilly.pkgd.min" %>
-<%= javascript_include_tag "mdDateTimePicker" %>
-<%= javascript_include_tag "app" %>
-</body>
-
+  <body>
+    <h1>Saved Campaigns</h1>
+  </body>
 </html>
