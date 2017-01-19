@@ -35,6 +35,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'material_design_lite-rails', '~> 1.3'
+gem 'jquery-ui-rails'
+gem 'momentjs-rails'
+gem 'draggabilly-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

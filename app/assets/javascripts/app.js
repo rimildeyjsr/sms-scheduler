@@ -1,7 +1,5 @@
-$('.mdl-card__supporting-text').hide();
-
 ready = function(){
-
+    $('.mdl-card__supporting-text').hide();
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
     $('#fab').click(function(){
 
@@ -49,22 +47,27 @@ ready = function(){
 
     dialogStartDate.trigger = inputStartDate;
 
-    inputStartDate.addEventListener('click', function() {
-        dialogStartDate.toggle();
-        $('.container-div').toggle();
-    });
+    if (inputStartDate) {
+        inputStartDate.addEventListener('click', function() {
+            dialogStartDate.toggle();
+            $('.container-div').toggle();
+        });
 
-    inputStartDate.addEventListener('onOk', function() {
-        var startDate = dialogStartDate.time.toString();
-        var startDateFormat = moment(startDate).format('LL');
-        outputStartDate.innerHTML = startDateFormat;
-        $('#start-date-label').css('color','blue');
-        $('.container-div').show();
-    });
+        inputStartDate.addEventListener('onOk', function() {
+            var startDate = dialogStartDate.time.toString();
+            var startDateFormat = moment(startDate).format('LL');
+            outputStartDate.innerHTML = startDateFormat;
+            $('#start-date-label').css('color','blue');
+            $('.container-div').show();
+        });
 
-    inputStartDate.addEventListener('onCancel',function(){
-        $('.container-div').show();
-    });
+        inputStartDate.addEventListener('onCancel',function(){
+            $('.container-div').show();
+        });
+    }
+
+
+
 
     var dialogEndDate = new mdDateTimePicker.default({
         type: 'date',
@@ -75,22 +78,26 @@ ready = function(){
 
     dialogEndDate.trigger = inputEndDate;
 
-    inputEndDate.addEventListener('click', function() {
-        dialogEndDate.toggle();
-        $('.container-div').toggle();
-    });
+    if (inputEndDate) {
+        inputEndDate.addEventListener('click', function() {
+            dialogEndDate.toggle();
+            $('.container-div').toggle();
+        });
 
-    inputEndDate.addEventListener('onOk', function() {
-        var endDate = dialogEndDate.time.toString();
-        var endDateFormat = moment(endDate).format('LL');
-        outputEndDate.innerHTML = endDateFormat;
-        $('#end-date-label').css('color','blue');
-        $('.container-div').show();
-    });
+        inputEndDate.addEventListener('onOk', function() {
+            var endDate = dialogEndDate.time.toString();
+            var endDateFormat = moment(endDate).format('LL');
+            outputEndDate.innerHTML = endDateFormat;
+            $('#end-date-label').css('color','blue');
+            $('.container-div').show();
+        });
 
-    inputEndDate.addEventListener('onCancel',function(){
-        $('.container-div').show();
-    });
+        inputEndDate.addEventListener('onCancel',function(){
+            $('.container-div').show();
+        });
+    }
+
+
 
     var dialogStartTime = new mdDateTimePicker.default({
         type: 'time',
@@ -99,22 +106,26 @@ ready = function(){
 
     dialogStartTime.trigger = inputStartTime;
 
-    inputStartTime.addEventListener('click', function() {
-        dialogStartTime.toggle();
-        $('.container-div').toggle();
-    });
+    if (inputStartTime) {
+        inputStartTime.addEventListener('click', function() {
+            dialogStartTime.toggle();
+            $('.container-div').toggle();
+        });
 
-    inputStartTime.addEventListener('onOk', function() {
-        $('.container-div').show();
-        var startTime = dialogStartTime.time.toString();
-        var startTimeFormat = moment(startTime).format('LTS');
-        outputStartTime.innerHTML = startTimeFormat;
-        $('#start-time-label').css('color','blue');
-    });
+        inputStartTime.addEventListener('onOk', function() {
+            $('.container-div').show();
+            var startTime = dialogStartTime.time.toString();
+            var startTimeFormat = moment(startTime).format('LTS');
+            outputStartTime.innerHTML = startTimeFormat;
+            $('#start-time-label').css('color','blue');
+        });
 
-    inputStartTime.addEventListener('onCancel',function(){
-        $('.container-div').show();
-    });
+        inputStartTime.addEventListener('onCancel',function(){
+            $('.container-div').show();
+        });
+    }
+
+
 
 }
 

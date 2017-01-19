@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html lang="eng">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMS scheduling site</title>
 
-    <%= stylesheet_link_tag "jquery-ui.min" %>
-    <%= stylesheet_link_tag "material.min" %>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en'
-          rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag "mdDateTimePicker" %>
-    <%= stylesheet_link_tag "home.style" %>
-  </head>
-
-  <body>
-    <h1>Saved Campaigns</h1>
+     <h1>Saved Campaigns</h1>
 
 
     <p> <%= link_to 'Create New Campaign', "/home/new" %></p>
 
-    <%= javascript_include_tag "jquery-3.0.0.min" %>
-    <%= javascript_include_tag "jquery-ui.min" %>
-    <%= javascript_include_tag "material.min" %>
-    <%= javascript_include_tag "moment.min" %>
-    <%= javascript_include_tag "draggabilly.pkgd.min" %>
-    <%= javascript_include_tag "mdDateTimePicker" %>
-    <%= javascript_include_tag "app" %>
-
-  </body>
-</html>
