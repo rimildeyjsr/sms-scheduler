@@ -17,7 +17,6 @@
 //= require moment
 //= require draggabilly.pkgd
 //= require mdDateTimePicker
-//= require turbolinks
 //= require_tree .
 
 
