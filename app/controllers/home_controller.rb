@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   end
 
   def new
-    @campaign = Home.new
+    @home = Home.new
   end
 
   def show
