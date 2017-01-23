@@ -25,7 +25,7 @@ ready = function(){
     $('#sms_msg').keyup(function(){
         var Length = $('#sms_msg').val().length;
         var pageBreak = Math.floor((Length/160));
-        $('#break-msg').val(pageBreak+1);
+        $('#break_msg').val(pageBreak+1);
     });
 
     var inputStartDate = document.querySelector('#start_date');

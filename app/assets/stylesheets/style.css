@@ -73,7 +73,7 @@ html,body,.container-div {
     color: darkgrey;
 }
 
-#error-msg, #break-msg {
+#break_msg {
     color : red;
 
 }

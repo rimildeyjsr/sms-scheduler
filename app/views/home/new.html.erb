@@ -54,8 +54,9 @@
 
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text"  id="break-msg" value="1">
-            <label class="mdl-textfield__label" for="break-msg">Number of Pages</label>
+            <!--<input class="mdl-textfield__input" type="text"  id="break-msg" value="1">-->
+            <%= text_field_tag :break_msg,"1",:class => "mdl-textfield__input"%>
+            <label class="mdl-textfield__label" for="break_msg">Number of Pages</label>
           </div>
       <%end%>
 
