@@ -22,19 +22,19 @@ ready = function(){
 
     });
 
-    $('#sms-msg').keyup(function(){
-        var Length = $('#sms-msg').val().length;
+    $('#sms_msg').keyup(function(){
+        var Length = $('#sms_msg').val().length;
         var pageBreak = Math.floor((Length/160));
         $('#break-msg').val(pageBreak+1);
     });
 
-    var inputStartDate = document.querySelector('#start-date');
+    var inputStartDate = document.querySelector('#start_date');
     var outputStartDate = document.querySelector('#start-date-label');
 
-    var inputEndDate = document.querySelector('#end-date');
+    var inputEndDate = document.querySelector('#end_date');
     var outputEndDate = document.querySelector('#end-date-label');
 
-    var inputStartTime = document.querySelector('#start-time');
+    var inputStartTime = document.querySelector('#start_time');
     var outputStartTime = document.querySelector('#start-time-label');
 
 
