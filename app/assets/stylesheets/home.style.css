@@ -21,7 +21,7 @@ p {
     color:white;
 }
 
-p a {
+p a, h3 a {
     color: white;
     text-decoration: none;
 }
