@@ -5,7 +5,6 @@ ready = function(){
 
         var innerHtml = $('#fab .material-icons').html();
         if (innerHtml === 'add'){
-            console.log(2);
             $('#fab').css('background-color','green');
             $('#fab .material-icons').html('check circle');
             $('.mdl-card__supporting-text').show();

@@ -1,7 +1,7 @@
 <h1>Saved Campaigns</h1>
 
 <% @campaigns.each do |campaign| %>
-    <p><%= campaign.campaign_name %></p>
+    <p><%= link_to campaign.campaign_name, "/home/#{campaign.id}" %></p>
 <%end%>
 
 <p> <%= link_to 'Create New Campaign', "/home/new" %> </p>
