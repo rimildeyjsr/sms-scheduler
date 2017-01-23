@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_name: MyString
+  phone_number_receiver: 1
+  start_date: 2017-01-23
+  end_date: 2017-01-23
+  start_time: 2017-01-23 19:48:14
+  sms_msg: MyText
+
+two:
+  campaign_name: MyString
+  phone_number_receiver: 1
+  start_date: 2017-01-23
+  end_date: 2017-01-23
+  start_time: 2017-01-23 19:48:14
+  sms_msg: MyText
