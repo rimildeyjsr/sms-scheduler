@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/home', to: 'home#index'
   get '/home/new', to: 'home#new'
   get 'home/:id', to: 'home#show'
+  post '/home', to: 'home#create', as: :homes
 end

@@ -10,4 +10,8 @@ class HomeController < ApplicationController
   def show
     @campaign = Home.find(params[:id])
   end
+
+  def create
+    @home = Home.create(home_params)
+  end
 end
