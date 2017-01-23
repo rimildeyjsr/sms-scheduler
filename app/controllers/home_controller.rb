@@ -8,6 +8,5 @@ class HomeController < ApplicationController
 
   def show
     @campaign = Home.find(params[:id])
-    render text: @campaign.campaign_name
   end
 end
