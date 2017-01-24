@@ -12,28 +12,30 @@ ready = function(){
         }
 
         else {
+            $('#campaign_form').submit();
             $('.mdl-card__supporting-text').hide();
             $('#fab').css('background-color','#ed2553');
             $('#fab .material-icons').html('add');
-            $('.mdl-card__title').show();
-            $('#title-text').text('Campaign added!');
+            //$('.mdl-card__title').show();
+            //$('#title-text').text('Campaign added!');
         }
 
     });
 
-    $('#sms_msg').keyup(function(){
-        var Length = $('#sms_msg').val().length;
+    $('#home_sms_msg').keyup(function(){
+        console.log(1);
+        var Length = $('#home_sms_msg').val().length;
         var pageBreak = Math.floor((Length/160));
         $('#break_msg').val(pageBreak+1);
     });
 
-    var inputStartDate = document.querySelector('#start_date');
+    var inputStartDate = document.querySelector('#home_start_date');
     var outputStartDate = document.querySelector('#start-date-label');
 
-    var inputEndDate = document.querySelector('#end_date');
+    var inputEndDate = document.querySelector('#home_end_date');
     var outputEndDate = document.querySelector('#end-date-label');
 
-    var inputStartTime = document.querySelector('#start_time');
+    var inputStartTime = document.querySelector('#home_start_time');
     var outputStartTime = document.querySelector('#start-time-label');
 
 
