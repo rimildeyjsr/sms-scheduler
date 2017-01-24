@@ -12,7 +12,7 @@ ready = function(){
         }
 
         else {
-            $('#campaign_form').submit();
+            $('#new_home').submit();
             $('.mdl-card__supporting-text').hide();
             $('#fab').css('background-color','#ed2553');
             $('#fab .material-icons').html('add');
